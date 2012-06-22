@@ -1,0 +1,22 @@
+# This file is part of the Sylius sandbox application.
+# (c) Paweł Jędrzejewski
+
+sandbox_addressing_backend_address_create:
+    pattern: /create
+    defaults: { _controller: SandboxAddressingBundle:Backend\Address:create }
+
+sandbox_addressing_backend_address_update:
+    pattern: /{id}/update
+    defaults: { _controller: SandboxAddressingBundle:Backend\Address:update }
+
+sandbox_addressing_backend_address_delete:
+    pattern: /{id}/delete
+    defaults: { _controller: SandboxAddressingBundle:Backend\Address:delete }
+
+sandbox_addressing_backend_address_list:
+    pattern: /
+    defaults: { _controller: SandboxAddressingBundle:Backend\Address:list }
+
+sandbox_addressing_backend_address_show:
+    pattern: /{id}
+    defaults: { _controller: SandboxAddressingBundle:Backend\Address:show }

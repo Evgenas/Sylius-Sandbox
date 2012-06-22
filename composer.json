@@ -23,7 +23,7 @@
         "knplabs/knp-menu-bundle":             "dev-master",
         "sensio/distribution-bundle":          "dev-master",
         "stof/doctrine-extensions-bundle":     "dev-master",
-        "sylius/addressing-bundle":            "dev-master",
+        "sylius/addressing-bundle":            "dev-experimental/extracting-component",
         "sylius/assortment-bundle":            "dev-master",
         "sylius/blogger-bundle":               "dev-master",
         "sylius/cart-bundle":                  "dev-master",
