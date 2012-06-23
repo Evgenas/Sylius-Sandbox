@@ -58,7 +58,7 @@ class LoadPostsData extends AbstractFixture implements ContainerAwareInterface, 
             $post = $manager->createPost();
 
             $post->setTitle($faker->sentence);
-            $post->setAuthor($faker->name);
+            $post->setAuthorName($faker->name);
             $post->setContent($faker->paragraph(9));
 
             $randomA = $faker->randomElement($categoriesA);

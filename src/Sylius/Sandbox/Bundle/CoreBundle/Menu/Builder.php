@@ -53,7 +53,7 @@ class Builder extends ContainerAware
         $child->addChild('Products', array('route' => 'sylius_assortment_product_list'));
 
         $child = $menu->addChild('Blog', $childOptions);
-        $child->addChild('Posts', array('route' => 'sylius_blogger_post_list'));
+        $child->addChild('Posts', array('route' => 'sandbox_blogger_post_list'));
 
         $child = $menu->addChild('My cart', array('route' => 'sylius_cart_show'));
 
@@ -338,11 +338,11 @@ class Builder extends ContainerAware
         $this->addDivider($child);
 
         $child->addChild('Create post', array(
-            'route' => 'sylius_blogger_backend_post_create',
+            'route' => 'sandbox_blogger_backend_post_create',
             'labelAttributes' => array('icon' => 'icon-plus-sign')
         ));
-        $child->addChild('List post', array(
-            'route'           => 'sylius_blogger_backend_post_list',
+        $child->addChild('List posts', array(
+            'route'           => 'sandbox_blogger_backend_post_list',
             'labelAttributes' => array('icon' => 'icon-list-alt')
         ));
     }

@@ -11,7 +11,11 @@ sylius_sandbox_cart:
     resource: @SandboxCartBundle/Resources/config/routing.yml
 
 sylius_sandbox_blogger:
-    resource: @SandboxBloggerBundle/Resources/config/routing.yml
+    resource: @SandboxBloggerBundle/Resources/config/routing/frontend.yml
+
+sylius_sandbox_blogger_backend:
+    resource: @SandboxBloggerBundle/Resources/config/routing/backend.yml
+    prefix: /administration/blog
 
 sylius_sandbox_sales:
     resource: @SandboxSalesBundle/Resources/config/routing.yml
