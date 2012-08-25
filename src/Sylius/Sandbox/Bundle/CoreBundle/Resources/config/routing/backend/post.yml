@@ -1,0 +1,60 @@
+# This file is part of the Sylius sandbox application.
+# (c) Paweł Jędrzejewski
+
+sylius_sandbox_backend_post_new:
+    pattern: /new
+    defaults:
+        _controller: sylius_blogger.controller.post:newAction
+        _sylius.template: SandboxCoreBundle:Backend/Post:create.html.twig
+    requirements:
+        _method: GET
+
+sylius_sandbox_backend_post_post:
+    pattern: /
+    defaults:
+        _controller: sylius_blogger.controller.post:postAction
+        _sylius.template: SandboxCoreBundle:Backend/Post:create.html.twig
+        _sylius.redirect: sylius_sandbox_backend_post
+    requirements:
+        _method: POST
+
+sylius_sandbox_backend_post_edit:
+    pattern: /{id}/edit
+    defaults:
+        _controller: sylius_blogger.controller.post:editAction
+        _sylius.template: SandboxCoreBundle:Backend/Post:update.html.twig
+    requirements:
+        _method: GET
+
+sylius_sandbox_backend_post_put:
+    pattern: /{id}
+    defaults:
+        _controller: sylius_blogger.controller.post:putAction
+        _sylius.template: SandboxCoreBundle:Backend/Post:update.html.twig
+        _sylius.redirect: sylius_sandbox_backend_post
+    requirements:
+        _method: PUT|POST
+
+sylius_sandbox_backend_post_delete:
+    pattern: /{id}/delete
+    defaults:
+        _controller: sylius_blogger.controller.post:deleteAction
+        _sylius.redirect: sylius_sandbox_backend_postes
+    requirements:
+        _method: GET|DELETE
+
+sylius_sandbox_backend_posts:
+    pattern: /
+    defaults:
+        _controller: sylius_blogger.controller.post:getCollectionAction
+        _sylius.template: SandboxCoreBundle:Backend/Post:list.html.twig
+    requirements:
+        _method: GET
+
+sylius_sandbox_backend_post:
+    pattern: /{id}
+    defaults:
+        _controller: sylius_blogger.controller.post:getAction
+        _sylius.template: SandboxCoreBundle:Backend/Post:show.html.twig
+    requirements:
+        _method: GET

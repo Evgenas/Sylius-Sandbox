@@ -12,14 +12,16 @@
 
         {% block stylesheets %}
         {% stylesheets output='assets/compiled/frontend.css'
-            '@SandboxCoreBundle/Resources/public/bootstrap/docs/assets/css/bootstrap.css'
-            '@SandboxCommentBundle/Resources/assets/css/comments.css'
+            'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css'
+            'http://redactorjs.com/js/redactor/redactor.css'
+            '@SandboxCoreBundle/Resources/assets/css/comments.css'
+            '@SandboxCoreBundle/Resources/assets/css/create-ui.css'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
         {% endstylesheets %}
 
         {% stylesheets output='assets/compiled/frontend.less'
-            '@SandboxCoreBundle/Resources/public/less/frontend.less'
+            '@SandboxCoreBundle/Resources/assets/less/frontend.less'
         %}
             <link rel="stylesheet/less" href="{{ asset_url }}" />
         {% endstylesheets %}
@@ -28,12 +30,19 @@
         {% block javascripts %}
         {% javascripts output='assets/compiled/frontend.js'
             'http://code.jquery.com/jquery.min.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-dropdown.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-modal.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-tab.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-alert.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-button.js'
-            '@SandboxCoreBundle/Resources/public/js/less-1.1.5.min.js'
+            'http://code.jquery.com/ui/1.8.23/jquery-ui.min.js'
+            'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap.min.js'
+            'http://redactorjs.com/js/redactor/redactor.min.js'
+            'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.1/modernizr.min.js'
+
+            '@SandboxCoreBundle/Resources/assets/js/underscore-min.js'
+            '@SandboxCoreBundle/Resources/assets/js/less.min.js'
+            '@SandboxCoreBundle/Resources/assets/js/backbone-min.js'
+            '@SandboxCoreBundle/Resources/assets/js/vie-min.js'
+            '@SandboxCoreBundle/Resources/assets/js/annotate-min.js'
+            '@SandboxCoreBundle/Resources/assets/js/jquery.rdfquery.min.js'
+            '@SandboxCoreBundle/Resources/assets/js/create-min.js'
+            '@SandboxCoreBundle/Resources/assets/js/frontend.js'
         %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}

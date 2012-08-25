@@ -41,7 +41,7 @@ class Builder extends ContainerAware
 
         $menu->setCurrent($this->container->get('request')->getRequestUri());
 
-        $menu->addChild('Shop', array('route' => 'sylius_sandbox_core_frontend'));
+        $menu->addChild('Shop', array('route' => 'sylius_sandbox_core_frontend_index'));
 
         $childOptions = array(
             'attributes'         => array('class' => 'dropdown'),
@@ -49,13 +49,17 @@ class Builder extends ContainerAware
             'labelAttributes'    => array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'href' => '#')
         );
 
+        /*
         $child = $menu->addChild('Offer', $childOptions);
         $child->addChild('Products', array('route' => 'sylius_assortment_product_list'));
+        */
 
         $child = $menu->addChild('Blog', $childOptions);
-        $child->addChild('Posts', array('route' => 'sylius_blogger_post_list'));
+        $child->addChild('Posts', array('route' => 'sylius_sandbox_frontend_posts'));
 
+        /*
         $child = $menu->addChild('My cart', array('route' => 'sylius_cart_show'));
+        */
 
         return $menu;
     }
@@ -83,6 +87,7 @@ class Builder extends ContainerAware
             'labelAttributes'    => array('class' => 'nav-header')
         );
 
+        /*
         $categoryManager = $this->container->get('sylius_categorizer.manager.category');
 
         $assortmentCategories = $categoryManager->findCategories('assortment');
@@ -137,6 +142,7 @@ class Builder extends ContainerAware
                 'labelAttributes' => array('icon' => 'icon-lock')
             ));
         }
+        */
 
         return $menu;
     }
@@ -159,7 +165,7 @@ class Builder extends ContainerAware
 
         $menu->setCurrent($this->container->get('request')->getRequestUri());
 
-        $menu->addChild('Dashboard', array('route' => 'sylius_sandbox_core_backend'));
+        $menu->addChild('Dashboard', array('route' => 'sylius_sandbox_core_backend_index'));
 
         $childOptions = array(
             'attributes'         => array('class' => 'dropdown'),
@@ -167,14 +173,14 @@ class Builder extends ContainerAware
             'labelAttributes'    => array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'href' => '#')
         );
 
-        $this->addAssortmentMenu($menu, $childOptions);
-        $this->addSalesMenu($menu, $childOptions);
-        $this->addBlogMenu($menu, $childOptions);
+        //$this->addAssortmentMenu($menu, $childOptions);
+        //$this->addSalesMenu($menu, $childOptions);
+        //$this->addBlogMenu($menu, $childOptions);
         $this->addAddressingMenu($menu, $childOptions);
 
         $this->addDivider($menu, true);
 
-        $menu->addChild('Go to <strong>frontend</strong>', array('route' => 'sylius_sandbox_core_frontend'));
+        $menu->addChild('Go to <strong>frontend</strong>', array('route' => 'sylius_sandbox_core_frontend_index'));
 
         return $menu;
     }
@@ -202,16 +208,18 @@ class Builder extends ContainerAware
             'labelAttributes'    => array('class' => 'nav-header')
         );
 
-        $this->addAssortmentMenu($menu, $childOptions);
-        $this->addSalesMenu($menu, $childOptions);
+        //$this->addAssortmentMenu($menu, $childOptions);
+        //$this->addSalesMenu($menu, $childOptions);
         $this->addBlogMenu($menu, $childOptions);
         $this->addAddressingMenu($menu, $childOptions);
 
+        /*
         $child = $menu->addChild('Administration', $childOptions);
         $child->addChild('Logout', array(
             'route' => 'fos_user_security_logout',
             'labelAttributes' => array('icon' => 'icon-off')
         ));
+        */
 
         return $menu;
     }
@@ -324,6 +332,7 @@ class Builder extends ContainerAware
     {
         $child = $menu->addChild('Blog', $childOptions);
 
+        /*
         $child->addChild('Create category', array(
             'route'           => 'sylius_categorizer_backend_category_create',
             'routeParameters' => array('alias' => 'blog'),
@@ -334,15 +343,16 @@ class Builder extends ContainerAware
             'routeParameters' => array('alias' => 'blog'),
             'labelAttributes' => array('icon' => 'icon-list-alt')
         ));
+        */
 
         $this->addDivider($child);
 
         $child->addChild('Create post', array(
-            'route' => 'sylius_blogger_backend_post_create',
+            'route'           => 'sylius_sandbox_backend_post_new',
             'labelAttributes' => array('icon' => 'icon-plus-sign')
         ));
         $child->addChild('List post', array(
-            'route'           => 'sylius_blogger_backend_post_list',
+            'route'           => 'sylius_sandbox_backend_posts',
             'labelAttributes' => array('icon' => 'icon-list-alt')
         ));
     }
@@ -358,11 +368,11 @@ class Builder extends ContainerAware
         $child = $menu->addChild('Address book', $childOptions);
 
         $child->addChild('Create address', array(
-            'route' => 'sylius_addressing_backend_address_create',
+            'route'           => 'sylius_sandbox_backend_address_new',
             'labelAttributes' => array('icon' => 'icon-plus-sign')
         ));
         $child->addChild('List addresses', array(
-            'route' => 'sylius_addressing_backend_address_list',
+            'route'           => 'sylius_sandbox_backend_addresses',
             'labelAttributes' => array('icon' => 'icon-list-alt')
         ));
     }

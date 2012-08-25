@@ -12,13 +12,13 @@
 
         {% block stylesheets %}
         {% stylesheets output='assets/compiled/backend.css'
-            '@SandboxCoreBundle/Resources/public/bootstrap/docs/assets/css/bootstrap.css'
+            'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
 
         {% stylesheets output='assets/compiled/backend.less'
-            '@SandboxCoreBundle/Resources/public/less/backend.less'
+            '@SandboxCoreBundle/Resources/assets/less/backend.less'
         %}
             <link rel="stylesheet/less" href="{{ asset_url }}" />
         {% endstylesheets %}
@@ -27,13 +27,9 @@
         {% block javascripts %}
         {% javascripts output='assets/compiled/backend.js'
             'http://code.jquery.com/jquery.min.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-dropdown.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-modal.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-tab.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-alert.js'
-            '@SandboxCoreBundle/Resources/public/bootstrap/js/bootstrap-button.js'
-            '@SandboxCoreBundle/Resources/public/js/less-1.1.5.min.js'
-            '@SandboxCoreBundle/Resources/public/js/backend.js'
+            'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap.min.js'
+            '@SandboxCoreBundle/Resources/assets/js/backend.js'
+            '@SandboxCoreBundle/Resources/assets/js/less.min.js'
 
             '@SyliusAssortmentBundle/Resources/assets/js/jquery.sylius-assortment.js'
         %}

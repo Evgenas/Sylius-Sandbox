@@ -9,7 +9,7 @@ use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
 use Behat\Symfony2Extension\Context\KernelAwareInterface;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
-use Sylius\Sandbox\Bundle\UserBundle\Features\Context\DataContext as UserDataContext;
+use Sylius\Sandbox\Bundle\CoreBundle\Features\Context\DataContext as UserDataContext;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 require_once 'PHPUnit/Autoload.php';

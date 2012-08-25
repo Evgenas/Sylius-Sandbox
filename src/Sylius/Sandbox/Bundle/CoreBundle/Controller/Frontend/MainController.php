@@ -12,7 +12,6 @@
 namespace Sylius\Sandbox\Bundle\CoreBundle\Controller\Frontend;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Frontend main controller.

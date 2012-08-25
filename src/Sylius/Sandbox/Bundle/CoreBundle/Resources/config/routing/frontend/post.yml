@@ -1,0 +1,19 @@
+# This file is part of the Sylius sandbox application.
+# (c) Paweł Jędrzejewski
+
+sylius_sandbox_frontend_posts:
+    pattern: /
+    defaults:
+        _controller: sylius_blogger.controller.post:getCollectionAction
+        _sylius.template: SandboxCoreBundle:Frontend/Post:list.html.twig
+    requirements:
+        _method: GET
+
+sylius_sandbox_frontend_post:
+    pattern: /{slug}
+    defaults:
+        _controller: sylius_blogger.controller.post:getAction
+        _sylius.template: SandboxCoreBundle:Frontend/Post:show.html.twig
+        _sylius.identifier: slug
+    requirements:
+        _method: GET

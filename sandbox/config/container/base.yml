@@ -63,14 +63,14 @@ avalanche_imagine:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Sylius\Sandbox\Bundle\UserBundle\Entity\User
+    user_class: Sylius\Sandbox\Bundle\CoreBundle\Entity\User
 
 fos_comment:
     db_driver: orm
     class:
         model:
-            comment: Sylius\Sandbox\Bundle\CommentBundle\Entity\Comment
-            thread: Sylius\Sandbox\Bundle\CommentBundle\Entity\Thread
+            comment: Sylius\Sandbox\Bundle\CoreBundle\Entity\Comment
+            thread: Sylius\Sandbox\Bundle\CoreBundle\Entity\Thread
     acl: true
     service:
         acl:
@@ -99,31 +99,31 @@ sylius_assortment:
     api: true
     classes:
         model:
-            product: Sylius\Sandbox\Bundle\AssortmentBundle\Entity\Product
-            variant: Sylius\Sandbox\Bundle\AssortmentBundle\Entity\Variant\Variant
-            property: Sylius\Sandbox\Bundle\AssortmentBundle\Entity\Property\Property
-            product_property: Sylius\Sandbox\Bundle\AssortmentBundle\Entity\Property\ProductProperty
-            prototype: Sylius\Sandbox\Bundle\AssortmentBundle\Entity\Prototype\Prototype
-            option: Sylius\Sandbox\Bundle\AssortmentBundle\Entity\Option\Option
-            option_value: Sylius\Sandbox\Bundle\AssortmentBundle\Entity\Option\OptionValue
+            product: Sylius\Sandbox\Bundle\CoreBundle\Entity\Product
+            variant: Sylius\Sandbox\Bundle\CoreBundle\Entity\Variant\Variant
+            property: Sylius\Sandbox\Bundle\CoreBundle\Entity\Property\Property
+            product_property: Sylius\Sandbox\Bundle\CoreBundle\Entity\Property\ProductProperty
+            prototype: Sylius\Sandbox\Bundle\CoreBundle\Entity\Prototype\Prototype
+            option: Sylius\Sandbox\Bundle\CoreBundle\Entity\Option\Option
+            option_value: Sylius\Sandbox\Bundle\CoreBundle\Entity\Option\OptionValue
         form:
             type:
-                product: Sylius\Sandbox\Bundle\AssortmentBundle\Form\Type\ProductType
-                variant: Sylius\Sandbox\Bundle\AssortmentBundle\Form\Type\VariantType
+                product: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\ProductType
+                variant: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\VariantType
 
 sylius_categorizer:
     driver: doctrine/orm
     catalogs:
         assortment:
             property: "products"
-            model: Sylius\Sandbox\Bundle\AssortmentBundle\Entity\Category
+            model: Sylius\Sandbox\Bundle\CoreBundle\Entity\ProductCategory
             form: sylius_sandbox_assortment_category
             templates:
                 backend: SandboxAssortmentBundle:Backend/Category:%s.html.twig
                 frontend: SandboxAssortmentBundle:Frontend/Category:%s.html.twig
         blog:
             property: "posts"
-            model: Sylius\Sandbox\Bundle\BloggerBundle\Entity\Category
+            model: Sylius\Sandbox\Bundle\CoreBundle\Entity\PostCategory
             templates:
                 backend: SandboxBloggerBundle:Backend/Category:%s.html.twig
                 frontend: SandboxBloggerBundle:Frontend/Category:%s.html.twig
@@ -134,40 +134,40 @@ sylius_cart:
     resolver: sylius_sandbox_cart.resolver
     classes:
         model:
-            cart: Sylius\Sandbox\Bundle\CartBundle\Entity\Cart
-            item: Sylius\Sandbox\Bundle\CartBundle\Entity\Item
+            cart: Sylius\Sandbox\Bundle\CoreBundle\Entity\Cart
+            item: Sylius\Sandbox\Bundle\CoreBundle\Entity\Item
         manager:
-            cart: Sylius\Sandbox\Bundle\CartBundle\Entity\CartManager
+            cart: Sylius\Sandbox\Bundle\CoreBundle\Entity\CartManager
         form:
             type:
-                item: Sylius\Sandbox\Bundle\CartBundle\Form\Type\ItemType
+                item: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\ItemType
 
 sylius_blogger:
     driver: doctrine/orm
     classes:
         model:
-            post: Sylius\Sandbox\Bundle\BloggerBundle\Entity\Post
+            post: Sylius\Sandbox\Bundle\CoreBundle\Entity\Post
         form:
             type:
-                post: Sylius\Sandbox\Bundle\BloggerBundle\Form\Type\PostType
+                post: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\PostType
 
 sylius_sales:
     driver: doctrine/orm
     classes:
         model:
-            order: Sylius\Sandbox\Bundle\SalesBundle\Entity\Order
-            item: Sylius\Sandbox\Bundle\SalesBundle\Entity\Item
+            order: Sylius\Sandbox\Bundle\CoreBundle\Entity\Order
+            item: Sylius\Sandbox\Bundle\CoreBundle\Entity\Item
             status: Sylius\Bundle\SalesBundle\Entity\Status
         form:
             type:
-                order: Sylius\Sandbox\Bundle\SalesBundle\Form\Type\OrderType
-                item: Sylius\Sandbox\Bundle\SalesBundle\Form\Type\ItemType
+                order: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\OrderType
+                item: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\ItemType
 
 sylius_addressing:
     driver: doctrine/orm
     classes:
         model:
-            address: Sylius\Sandbox\Bundle\AddressingBundle\Entity\Address
+            address: Sylius\Sandbox\Bundle\CoreBundle\Entity\Address
         form:
             type:
                 address: Sylius\Bundle\AddressingBundle\Form\Type\CommonAddressType
@@ -176,4 +176,4 @@ sylius_inventory:
     driver: doctrine/orm
     classes:
         model:
-            iu: Sylius\Sandbox\Bundle\AssortmentBundle\Entity\InventoryUnit
+            iu: Sylius\Sandbox\Bundle\CoreBundle\Entity\InventoryUnit

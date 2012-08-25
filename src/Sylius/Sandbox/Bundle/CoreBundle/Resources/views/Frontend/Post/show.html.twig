@@ -1,0 +1,27 @@
+{% extends 'SandboxCoreBundle:Frontend:layout.html.twig' %}
+
+{% block content %}
+<div class="page-header">
+<h1>Reading blog post</h1>
+</div>
+
+<div class="well" about="{{ path('sylius_sandbox_backend_post', {'id': post.id}) }}" id="create-url">
+<h3 property="title">{{ post.title }}</h3>
+<p>Posted at {{ post.createdAt|date }} by <strong>{{ post.author }}</strong>.</p>
+<hr />
+
+    <ul class="nav nav-pills">
+        {% for category in post.categories %}
+            <li class="active">
+            <a href="{# path('sylius_categorizer_category_show', {'alias': 'blog', 'slug': category.slug}) #}">{{ category.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+<hr />
+    <div property="content">
+    {{ post.content|markdown }}
+    </div>
+<hr />
+</div>
+{% endblock %}

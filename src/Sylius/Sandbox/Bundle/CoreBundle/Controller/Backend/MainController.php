@@ -12,7 +12,6 @@
 namespace Sylius\Sandbox\Bundle\CoreBundle\Controller\Backend;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Administration dashboard controller.
