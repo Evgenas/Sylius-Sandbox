@@ -2,9 +2,9 @@
 
 namespace Sylius\Sandbox\Bundle\CoreBundle\Process\Step;
 
-use Sylius\Bundle\AddressingBundle\Model\AddressInterface;
 use Sylius\Bundle\FlowBundle\Process\Context\ProcessContextInterface;
 use Sylius\Bundle\FlowBundle\Process\Step\ContainerAwareStep;
+use Sylius\Component\Addressing\Model\AddressInterface;
 
 /**
  * Billing step.
@@ -37,9 +37,8 @@ class BillingStep extends ContainerAwareStep
 
         if ($request->isMethod('POST') && $form->bindRequest($request)->isValid()) {
             $context->getStorage()->set('billing.address', $form->getData());
-            $context->complete();
 
-            return;
+            return $context->complete();
         }
 
         return $this->container->get('templating')->renderResponse('SyliusSalesBundle:Process/Checkout/Step:billing.html.twig', array(

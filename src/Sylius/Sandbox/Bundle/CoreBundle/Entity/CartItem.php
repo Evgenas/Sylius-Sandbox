@@ -12,8 +12,8 @@
 namespace Sylius\Sandbox\Bundle\CoreBundle\Entity;
 
 use Sylius\Bundle\AssortmentBundle\Model\Variant\VariantInterface;
-use Sylius\Bundle\CartBundle\Entity\Item as BaseItem;
-use Sylius\Bundle\CartBundle\Model\ItemInterface;
+use Sylius\Bundle\CartBundle\Entity\CartItem as BaseCartItem;
+use Sylius\Component\Cart\Model\CartItemInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -21,7 +21,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@diweb.pl>
  */
-class Item extends BaseItem
+class CartItem extends BaseCartItem
 {
     /**
      * Variant.
@@ -55,7 +55,7 @@ class Item extends BaseItem
     /**
      * {@inheritdoc}
      */
-    public function equals(ItemInterface $item)
+    public function equals(CartItemInterface $item)
     {
         return $this->getVariant()->getId() === $item->getVariant()->getId();
     }

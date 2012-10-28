@@ -11,8 +11,8 @@
 
 namespace Sylius\Sandbox\Bundle\CoreBundle\Operator;
 
-use Sylius\Bundle\CartBundle\Model\CartInterface;
 use Sylius\Bundle\CartBundle\Operator\CartOperator as BaseCartOperator;
+use Sylius\Component\Cart\Model\CartInterface;
 
 /**
  * Cart operator.

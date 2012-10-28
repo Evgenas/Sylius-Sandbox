@@ -13,7 +13,7 @@ namespace Sylius\Sandbox\Bundle\CoreBundle\EventDispatcher\Listener;
 
 use Sylius\Bundle\AssortmentBundle\EventDispatcher\Event\FilterProductEvent;
 use Sylius\Bundle\AssortmentBundle\EventDispatcher\Event\FilterVariantEvent;
-use Sylius\Bundle\InventoryBundle\Operator\InventoryOperatorInterface;
+use Sylius\Component\Inventory\Operator\InventoryOperatorInterface;
 
 /**
  * Inventory change listener.

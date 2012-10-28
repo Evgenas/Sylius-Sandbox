@@ -32,7 +32,6 @@ class CheckoutProcessScenario extends ContainerAware implements ProcessScenarioI
             ->setDisplayRoute('sylius_sandbox_checkout_display')
             ->setForwardRoute('sylius_sandbox_checkout_forward')
             ->setRedirect('sylius_sandbox_core_frontend')
-
             ->validate(function () use ($cart) {
                 return !$cart->isEmpty();
             })

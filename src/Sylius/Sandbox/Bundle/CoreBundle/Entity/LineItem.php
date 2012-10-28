@@ -11,8 +11,8 @@
 
 namespace Sylius\Sandbox\Bundle\CoreBundle\Entity;
 
-use Sylius\Bundle\AssortmentBundle\Model\Variant\VariantInterface;
 use Sylius\Bundle\SalesBundle\Entity\LineItem as BaseLineItem;
+use Sylius\Component\Assortment\Model\Variants\VariantInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -20,7 +20,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Paweł Jędrzjewski <pjedrzejewski@diweb.pl>
  */
-class LineItem extends BaseItem
+class LineItem extends BaseLineItem
 {
     /**
      * @Assert\NotBlank

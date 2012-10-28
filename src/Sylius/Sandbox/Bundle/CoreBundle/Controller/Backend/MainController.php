@@ -11,14 +11,14 @@
 
 namespace Sylius\Sandbox\Bundle\CoreBundle\Controller\Backend;
 
-use Symfony\Component\DependencyInjection\ContainerAware;
+use Sylius\Component\Controllers\Controller;
 
 /**
  * Administration dashboard controller.
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@diweb.pl>
  */
-class MainController extends ContainerAware
+class MainController extends Controller
 {
     /**
      * Displays administration dashboard main panel.
@@ -27,6 +27,6 @@ class MainController extends ContainerAware
      */
     public function indexAction()
     {
-        return $this->container->get('templating')->renderResponse('SandboxCoreBundle:Backend/Main:index.html.twig');
+        return $this->render('SandboxCoreBundle:Backend/Main:index.html.twig');
     }
 }

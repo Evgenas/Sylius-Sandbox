@@ -11,8 +11,8 @@
 
 namespace Sylius\Sandbox\Bundle\CoreBundle\Form\Type;
 
-use Sylius\Bundle\AssortmentBundle\Model\ProductInterface;
 use Sylius\Bundle\CartBundle\Form\Type\ItemType as BaseItemType;
+use Sylius\Component\Assortment\Model\ProductInterface;
 use Symfony\Component\Form\Exception\FormException;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\Options;

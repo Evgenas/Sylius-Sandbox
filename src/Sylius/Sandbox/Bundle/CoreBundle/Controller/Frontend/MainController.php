@@ -11,14 +11,14 @@
 
 namespace Sylius\Sandbox\Bundle\CoreBundle\Controller\Frontend;
 
-use Symfony\Component\DependencyInjection\ContainerAware;
+use Sylius\Component\Controllers\Controller;
 
 /**
  * Frontend main controller.
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@diweb.pl>
  */
-class MainController extends ContainerAware
+class MainController extends Controller
 {
     /**
      * Front page, yay!
@@ -27,6 +27,6 @@ class MainController extends ContainerAware
      */
     public function indexAction()
     {
-        return $this->container->get('templating')->renderResponse('SandboxCoreBundle:Frontend/Main:index.html.twig');
+        return $this->render('SandboxCoreBundle:Frontend/Main:index.html.twig');
     }
 }

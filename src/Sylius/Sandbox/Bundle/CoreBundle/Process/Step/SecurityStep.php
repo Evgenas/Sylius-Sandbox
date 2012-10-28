@@ -48,9 +48,7 @@ class SecurityStep extends ContainerAwareStep
             $this->authenticateUser($registrationForm->getData());
 
             // Registration was successful, complete this step.
-            $context->complete();
-
-            return;
+            return $context->complete();
         }
 
         return $this->container->get('templating')->renderResponse('SyliusSalesBundle:Process/Checkout/Step:security.html.twig', array(
@@ -82,4 +80,3 @@ class SecurityStep extends ContainerAwareStep
         $this->container->get('security.context')->setToken($token);
     }
 }
-

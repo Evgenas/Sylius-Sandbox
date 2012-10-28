@@ -2,8 +2,8 @@
 
 namespace Sylius\Sandbox\Bundle\CoreBundle\Processor\Operation;
 
-use Sylius\Bundle\SalesBundle\Model\OrderInterface;
 use Sylius\Bundle\SalesBundle\Processor\Operation\ContainerAwareOperation;
+use Sylius\Component\Sales\Model\OrderInterface;
 
 class ProcessOperation extends ContainerAwareOperation
 {

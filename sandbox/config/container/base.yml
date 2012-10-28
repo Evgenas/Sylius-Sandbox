@@ -135,9 +135,7 @@ sylius_cart:
     classes:
         model:
             cart: Sylius\Sandbox\Bundle\CoreBundle\Entity\Cart
-            item: Sylius\Sandbox\Bundle\CoreBundle\Entity\Item
-        manager:
-            cart: Sylius\Sandbox\Bundle\CoreBundle\Entity\CartManager
+            item: Sylius\Sandbox\Bundle\CoreBundle\Entity\CartItem
         form:
             type:
                 item: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\ItemType
@@ -156,12 +154,11 @@ sylius_sales:
     classes:
         model:
             order: Sylius\Sandbox\Bundle\CoreBundle\Entity\Order
-            item: Sylius\Sandbox\Bundle\CoreBundle\Entity\Item
-            status: Sylius\Bundle\SalesBundle\Entity\Status
+            line_item: Sylius\Sandbox\Bundle\CoreBundle\Entity\LineItem
         form:
             type:
                 order: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\OrderType
-                item: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\ItemType
+                line_item: Sylius\Sandbox\Bundle\CoreBundle\Form\Type\LineItemType
 
 sylius_addressing:
     driver: doctrine/orm

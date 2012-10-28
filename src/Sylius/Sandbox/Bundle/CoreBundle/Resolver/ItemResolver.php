@@ -11,10 +11,9 @@
 
 namespace Sylius\Sandbox\Bundle\CoreBundle\Resolver;
 
-use Sylius\Bundle\AssortmentBundle\Model\ProductManagerInterface;
-use Sylius\Bundle\CartBundle\Model\ItemManagerInterface;
 use Sylius\Bundle\CartBundle\Resolver\ItemResolverInterface;
-use Sylius\Bundle\InventoryBundle\Resolver\StockResolverInterface;
+use Sylius\Component\Inventory\Resolver\StockResolverInterface;
+use Sylius\Component\Resource\Manager\ResourceManagerInterface;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -29,14 +28,14 @@ class ItemResolver implements ItemResolverInterface
     /**
      * Item manager.
      *
-     * @var ItemManagerInterface
+     * @var ResourceManagerInterface
      */
     private $itemManager;
 
     /**
      * Product manager.
      *
-     * @var ProductManagerInterface
+     * @var ResourceManagerInterface
      */
     private $productManager;
 
@@ -57,16 +56,16 @@ class ItemResolver implements ItemResolverInterface
     /**
      * Constructor.
      *
-     * @param ItemManagerInterface    $itemManager
-     * @param ProductManagerInterface $productManager
-     * @param FormFactory             $formFactory
-     * @param StockResolverInterface  $stockResolver
+     * @param ResourceManagerInterface $itemManager
+     * @param ResourceManagerInterface $productManager
+     * @param FormFactory              $formFactory
+     * @param StockResolverInterface   $stockResolver
      */
     public function __construct(
-        ItemManagerInterface    $itemManager,
-        ProductManagerInterface $productManager,
-        FormFactory             $formFactory,
-        StockResolverInterface  $stockResolver
+        ResourceManagerInterface $itemManager,
+        ResourceManagerInterface $productManager,
+        FormFactory              $formFactory,
+        StockResolverInterface   $stockResolver
     )
     {
         $this->itemManager = $itemManager;

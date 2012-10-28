@@ -54,6 +54,6 @@ class CartOperatorTest extends \PHPUnit_Framework_TestCase
 
     private function getMockCartManager()
     {
-        return $this->getMock('Sylius\Bundle\CartBundle\Model\CartManagerInterface');
+        return $this->getMock('Sylius\Component\Resource\Manager\ResourceManagerInterface');
     }
 }

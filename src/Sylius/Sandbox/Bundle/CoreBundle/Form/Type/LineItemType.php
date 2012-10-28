@@ -11,17 +11,17 @@
 
 namespace Sylius\Sandbox\Bundle\CoreBundle\Form\Type;
 
-use Sylius\Bundle\SalesBundle\Form\Type\ItemType as BaseItemType;
+use Sylius\Bundle\SalesBundle\Form\Type\LineItemType as BaseLineItemType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 
 /**
- * Item form type.
+ * Custom order item form type.
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@diweb.pl>
  */
-class ItemType extends BaseItemType
+class LineItemType extends BaseLineItemType
 {
     /**
      * {@inheritdoc}
