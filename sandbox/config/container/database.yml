@@ -18,7 +18,6 @@ doctrine:
                     FOSCommentBundle: ~
                     FOSUserBundle: ~
                     SandboxAddressingBundle: ~
-                    SandboxAssortmentBundle: ~
                     SandboxBloggerBundle: ~
                     SandboxCommentBundle: ~
                     SandboxCoreBundle: ~
