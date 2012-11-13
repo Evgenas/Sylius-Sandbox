@@ -10,9 +10,6 @@ sylius_sandbox_assortment:
 sylius_sandbox_blogger:
     resource: @SandboxBloggerBundle/Resources/config/routing.yml
 
-sylius_sandbox_sales:
-    resource: @SandboxSalesBundle/Resources/config/routing.yml
-
 sylius_sandbox_user:
     resource: @SandboxUserBundle/Resources/config/routing.yml
 

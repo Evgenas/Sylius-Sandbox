@@ -21,7 +21,6 @@ doctrine:
                     SandboxBloggerBundle: ~
                     SandboxCommentBundle: ~
                     SandboxCoreBundle: ~
-                    SandboxSalesBundle: ~
                     SandboxUserBundle: ~
                     SyliusAddressingBundle: ~
                     SyliusAssortmentBundle: ~
